@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     const omdbApiKey = process.env.OMDB_API_KEY;
 
     try {
-        const traktUrl = `https://api.trakt.tv/movies/trending?limit=29`;
+        const traktUrl = `https://api.trakt.tv/movies/trending?limit=31`;
 
         const traktRes = await axios.get(traktUrl, {
             headers: {
