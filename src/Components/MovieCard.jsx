@@ -8,8 +8,8 @@ function MovieCard({ movie, name }) {
         style={{ backgroundImage: `url(${movie.Poster})` }}
         
       ></div>
-       <div className="bg-gray-400 text-white text-center h-[2rem] w-[full]">
-        {name.Title}
+       <div className="text-white text-xl w-full p-2 text-center bg-gray-900/60">
+        {name}
       </div>
 
      
