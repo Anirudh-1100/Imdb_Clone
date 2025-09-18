@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import axios from "axios";
+import Pagination from "./Pagination";
 
 function Movies() {
   const [movies, setMovies] = useState([]);
@@ -11,6 +12,7 @@ function Movies() {
     axios.get("/api/trending-movies")
       .then(response => {
         setMovies(response.data);
+        console.log(movies);
       })
       .catch(err => {
         console.error("Failed to fetch trending movies:", err);
@@ -33,6 +35,7 @@ function Movies() {
         ))}
       </div>
     </div>
+   
   );
 }
 
