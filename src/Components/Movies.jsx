@@ -66,7 +66,7 @@ function Movies() {
     <>
       <div className="p-5">
         <div className="text-2xl m-5 font-bold text-center">Trending Movies</div>
-        <div className="flex flex-row flex-wrap justify-center gap-5">
+        <div className="flex flex-col flex-wrap justify-center gap-5">
           {movies.map((movie) => (
             <MovieCard key={movie.imdbID} movie={movie} name={movie.Title} />
           ))}
