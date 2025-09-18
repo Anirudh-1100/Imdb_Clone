@@ -9,7 +9,7 @@ function MovieCard({ movie, name }) {
         
       ></div>
 
-      <div className="m-4 flex justify-center h-8 w-8 items-center rounded-lg ">
+      <div className="absolute top-0 right-0 m-2 rounded-lg ">
         &#128525;
       </div>
 
