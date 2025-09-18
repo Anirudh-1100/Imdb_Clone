@@ -4,7 +4,8 @@ function Watchlist() {
   return (
     <>
     <div className='flex justify-center flex-wrap m-4'>
-      <div className='flex justify-center h-[3rem] w-[9rem] bg-blue-400 rounded-xl text-white font-bold '>Action</div>
+      <div className='flex justify-center  items-center h-[3rem] w-[9rem] bg-blue-400 rounded-xl text-white font-bold mx-4'>Action</div>
+      <div className='flex justify-center  items-center h-[3rem] w-[9rem] bg-gray-400/50 rounded-xl text-white font-bold mx-4'>Action</div>
     </div>
 
 
