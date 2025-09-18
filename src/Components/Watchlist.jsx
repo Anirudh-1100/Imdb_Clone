@@ -25,6 +25,14 @@ function Watchlist() {
               <div className='mx-10'>The Boy</div>
             </td>
 
+            <td>8.5</td>
+            <td>9</td>
+            <td>Action</td>
+
+            <td>Delete</td>
+
+            
+
             
           </tr>
         </tbody>
