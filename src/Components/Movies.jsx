@@ -30,14 +30,12 @@ function Movies() {
 
     axios.get(`/api/trending-movies?page=${page}`, { signal: controller.signal })
       .then(response => {
-        // This is the critical part.
-        // We check if response.data.movies is an array before setting state.
         if (Array.isArray(response.data.movies)) {
-          setMovies(response.data.movies); // Correctly setting the movies array
+          setMovies(response.data.movies); 
           setPaginationInfo(response.data.pagination);
         } else {
           setError("Received invalid data from server.");
-          setMovies([]); // Set to empty array to prevent crash
+          setMovies([]); 
         }
       })
       .catch(err => {
