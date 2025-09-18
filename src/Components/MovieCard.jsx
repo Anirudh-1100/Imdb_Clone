@@ -9,7 +9,7 @@ function MovieCard({ movie, name }) {
       ></div>
 
       <div>
-        {name}
+        {name.Title}
       </div>
 
      
