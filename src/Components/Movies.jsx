@@ -9,12 +9,13 @@ function Movies() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("/api/trending-movies")
-      .then(response => {
+    axios
+      .get("/api/trending-movies")
+      .then((response) => {
         setMovies(response.data);
         console.log(movies);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error("Failed to fetch trending movies:", err);
       })
       .finally(() => {
@@ -27,15 +28,19 @@ function Movies() {
   }
 
   return (
-    <div className="p-5">
-      <div className="text-2xl m-5 font-bold text-center">Trending Movies</div>
-      <div className="flex flex-row flex-wrap justify-center gap-5">
-        {movies.map((movie) => (
-          <MovieCard key={movie.imdbID} movie={movie} name={movie.title} />
-        ))}
+    <>
+      <div className="p-5">
+        <div className="text-2xl m-5 font-bold text-center">
+          Trending Movies
+        </div>
+        <div className="flex flex-row flex-wrap justify-center gap-5">
+          {movies.map((movie) => (
+            <MovieCard key={movie.imdbID} movie={movie} name={movie.title} />
+          ))}
+        </div>
       </div>
-    </div>
-   
+      <Pagination />
+    </>
   );
 }
 
