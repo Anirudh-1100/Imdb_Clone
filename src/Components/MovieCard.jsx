@@ -1,25 +1,24 @@
-import React from "react";
+import React from 'react';
 
-function MovieCard({ movie, name ,  handleAddToWatchlist }) {
+// Corrected: Added onClick and logic to check if movie is in watchlist
+function MovieCard({ movie, handleAddToWatchlist, watchList }) {
+  const isAdded = watchList.some(item => item.imdbID === movie.imdbID);
+
   return (
-    <div className="group relative h-[40vh] w-[200px] rounded-xl overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-110 ">
+    <div
+      className="group relative h-[40vh] w-[200px] bg-center bg-cover rounded-xl overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-110 shadow-lg"
+      style={{ backgroundImage: `url(${movie.Poster})` }}
+    >
       <div
-        className="h-full w-full bg-center bg-cover"
-        style={{ backgroundImage: `url(${movie.Poster})` }}
-        
-      ></div>
-
-      <div className="absolute top-0 right-0 m-2 rounded-lg bg-gray-900/60 ">
-        &#128525;
+        onClick={() => !isAdded && handleAddToWatchlist(movie)}
+        className={`absolute top-0 right-0 m-2 p-2 rounded-lg bg-gray-900/60 text-2xl ${isAdded ? 'cursor-default' : 'cursor-pointer'}`}
+      >
+        {isAdded ? '✅' : '❤️'}
       </div>
 
-       <div className="absolute bottom-0 w-full p-2 text-center text-white text-xl bg-gray-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        {name}
+      <div className="absolute bottom-0 w-full p-2 text-center text-white text-xl bg-gray-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {movie.Title}
       </div>
-
-     
-
-     
     </div>
   );
 }
