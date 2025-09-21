@@ -4,7 +4,7 @@ import MovieCard from "./MovieCard";
 import axios from "axios";
 import Pagination from "./Pagination";
 
-function Movies() {
+function Movies(handleAddToWatchlist) {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
@@ -68,7 +68,7 @@ function Movies() {
         <div className="text-2xl m-5 font-bold text-center">Trending Movies</div>
         <div className="flex flex-row flex-wrap justify-center gap-5">
           {movies.map((movie) => (
-            <MovieCard key={movie.imdbID} movie={movie} name={movie.Title} />
+            <MovieCard key={movie.imdbID} movie={movie} name={movie.Title}  handleAddToWatchlist={handleAddToWatchlist}/>
           ))}
         </div>
       </div>

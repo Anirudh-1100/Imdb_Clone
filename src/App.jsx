@@ -4,8 +4,17 @@ import Watchlist from "./Components/Watchlist";
 import Banner from "./Components/Banner";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
+
+  let [watchList, setWatchList] = useState([])
+
+  let handleAddToWatchlist = (movieObj) =>{
+        let watchList = [...watchList , movieObj]
+        setWatchList(newWatchList)
+        console.log(newWatchList)
+  }
   return (
     <>
       <BrowserRouter>
@@ -15,7 +24,7 @@ function App() {
             path="/"
             element={
               <>
-                <Banner /> <Movies />
+                <Banner /> <Movies  handleAddToWatchlist={ handleAddToWatchlist} />
               </>
             }
           >

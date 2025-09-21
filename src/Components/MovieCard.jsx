@@ -1,6 +1,6 @@
 import React from "react";
 
-function MovieCard({ movie, name }) {
+function MovieCard({ movie, name ,  handleAddToWatchlist }) {
   return (
     <div className="group relative h-[40vh] w-[200px] rounded-xl overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-110 ">
       <div
@@ -9,7 +9,7 @@ function MovieCard({ movie, name }) {
         
       ></div>
 
-      <div className="absolute top-0 right-0 m-4 rounded-lg bg-gray-900/60 ">
+      <div className="absolute top-0 right-0 m-2 rounded-lg bg-gray-900/60 ">
         &#128525;
       </div>
 
