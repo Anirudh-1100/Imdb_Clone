@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Corrected: Added onClick and logic to check if movie is in watchlist
+
 function MovieCard({ movie, handleAddToWatchlist, watchList }) {
   const isAdded = watchList.some(item => item.imdbID === movie.imdbID);
 
