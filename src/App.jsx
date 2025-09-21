@@ -8,13 +8,22 @@ import { useState } from "react";
 
 function App() {
 
-  let [watchList, setWatchList] = useState([])
+   const [watchList, setWatchList] = useState([]);
 
-  let handleAddToWatchlist = (movieObj) =>{
-        let watchList = [...watchList , movieObj]
-        setWatchList(newWatchList)
-        console.log(newWatchList)
-  }
+  const handleAddToWatchlist = (movieObj) => {
+    if (!watchList.some(movie => movie.imdbID === movieObj.imdbID)) {
+      const newWatchList = [...watchList, movieObj];
+      setWatchList(newWatchList);
+      localStorage.setItem('movies', JSON.stringify(newWatchList));
+    }
+  };
+
+  useEffect(() => {
+    const moviesFromLocalStorage = localStorage.getItem('movies');
+    if (moviesFromLocalStorage) {
+      setWatchList(JSON.parse(moviesFromLocalStorage));
+    }
+  }, []);
   return (
     <>
       <BrowserRouter>
@@ -31,7 +40,7 @@ function App() {
            
           </Route>
 
-          <Route path="/Watchlist" element={<Watchlist />}>
+          <Route path="/Watchlist" element={<Watchlist watchList={watchList} setWatchList={setWatchList} />}>
       
           </Route>
         </Routes>

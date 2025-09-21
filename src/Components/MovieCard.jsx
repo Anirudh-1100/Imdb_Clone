@@ -9,7 +9,7 @@ function MovieCard({ movie, name ,  handleAddToWatchlist }) {
         
       ></div>
 
-      <div onclick={() => (handleAddToWatchlist(movieObj))}className="absolute top-0 right-0 m-2 rounded-lg bg-gray-900/60 ">
+      <div className="absolute top-0 right-0 m-2 rounded-lg bg-gray-900/60 ">
         &#128525;
       </div>
 
