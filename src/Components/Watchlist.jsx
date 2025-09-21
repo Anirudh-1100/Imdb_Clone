@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// Corrected: Made sorting logic safer with parseFloat
+
 function Watchlist({ watchList, setWatchList }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentGenre, setCurrentGenre] = useState('All Genres');
@@ -60,7 +60,7 @@ function Watchlist({ watchList, setWatchList }) {
               filteredAndSortedList.map((movie) => (
                 <tr key={movie.imdbID} className='border-b-2 hover:bg-gray-50'>
                   <td className='flex items-center px-6 py-2 min-w-[300px]'>
-                    <img className='h-24 w-40 object-cover rounded-md' src={movie.Poster} alt={`${movie.Title} poster`} />
+                    <img className='h-24 w-16 object-cover rounded-md shadow-lg' src={movie.Poster} alt={`${movie.Title} poster`} />
                     <div className='mx-10 font-semibold text-left'>{movie.Title}</div>
                   </td>
                   <td className='font-medium'>{movie.imdbRating} ⭐</td>
