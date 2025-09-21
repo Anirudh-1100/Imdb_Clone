@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     const omdbApiKey = process.env.OMDB_API_KEY;
 
     const page = parseInt(req.query.page, 10) || 1;
-    // Changed the default limit from 10 to 20
+
     const limit = parseInt(req.query.limit, 10) || 30;
 
     try {
